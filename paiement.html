@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Checkout example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+     
+  <body class="bg-white">
+      <header>
+
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <strong>AMA ZONE</strong>
+            </a>
+
+            <button type="button" class="btn btn-dark btn-lg">Panier</button>
+
+        </div>
+    </div>
+      </header>
+      
+<section class="jumbotron text-center">
+    
+  <div class="py-5 text-center">
+    <h2>Informations de paiement</h2>
+    <p class="lead">Veuillez compléter les informations suivantes.</p>
+  </div>
+</section>
+      
+    <div class="container">
+    <div class="row">
+        
+    <div class="col-md-12 order-md-1">
+        <div class="row">
+        <div class="col-md-2">
+          <label for="TypeCB">Type de la carte : </label>  
+        </div>
+            <div class="col-md-10">
+        <div class="d-block my-3">
+          <div class="custom-control custom-radio">
+            <input id="master" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+            <label class="custom-control-label" for="master">MasterCard</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="visa" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="visa">Visa</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="american" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="american">American Express</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="paypal">PayPal</label>
+          </div>
+        </div>
+        </div>
+        </div>
+            
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="NomCB">Nom de la carte</label>
+            <input type="text" class="form-control border border-dark" id="NomCB" placeholder="" required>
+            <small class="text-muted">Nom complet affiché sur la carte</small>
+            <div class="invalid-feedback">
+              Name on card is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="NumeroCB">Numéro de la carte</label>
+            <input type="text" class="form-control border border-dark" id="NumeroCB" placeholder="" required>
+            <div class="invalid-feedback">
+              Credit card number is required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="Expiration">Date d'expiration</label>
+            <input type="text" class="form-control border border-dark" id="Expiration" placeholder="" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="CodeSecurite">Code de sécurité</label>
+            <input type="text" class="form-control border border-dark" id="CodeSecurite" placeholder="" required>
+            <small class="text-muted">(3 ou 4 chiffres, selon la carte)</small>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Valider</button>
+      
+    </div>
+  </div>
+
+  
+  <footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>Site AMA is &copy; AMA AMA AMA AMA</p>
+    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>
