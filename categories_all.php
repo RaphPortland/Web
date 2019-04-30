@@ -151,7 +151,10 @@ mysqli_close($db_handle);
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
     <p>Ou nous retrouver? Visiter notre<a href="https://getbootstrap.com/"> Facebook</a> ou notre page <a href="/docs/4.3/getting-started/introduction/">Instagram</a>.</p>
- </footer>
+     <p class="float-right">
+      <a href="#">Haut de page</a>
+    </p>
+</footer>
 
 </body>
 
