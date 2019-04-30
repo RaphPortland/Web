@@ -93,7 +93,7 @@
         </div>
         <div class="col-md-5">
           <div class="card mb-4 shadow-sm">
-            <a href="itemsenvente.html"><img src="img/itemsenvente.jpg" alt="responsive" class="img-thumbnail"></a> </text></svg>
+            <a href="itemsenvente.php"><img src="img/itemsenvente.jpg" alt="responsive" class="img-thumbnail"></a> </text></svg>
             <div class="card-body">
               <p class="card-text"> Voir tous vos articles en vente</p>
               <div class="d-flex justify-content-between align-items-center">
