@@ -2,7 +2,10 @@
     session_start();
 
 
+    if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
+      header('Location: index.html');
 
+    }
 
 
 ?>
@@ -69,7 +72,6 @@
   </div>
 </section>
 <h1> <?php echo $_SESSION['Email']; ?> </h1>
-<h1>COUCOU</h1>
 
     <div class="container">
 
@@ -79,7 +81,7 @@
         <p><img src="img/raph.jpg"></p><br/><br/> 
       </div>
       <div class="col-md-4">
-        <p><br/><br/>Nom: Raphaël<br/>Prénom: Partouche<br/> Pseudo: Raph<br/>E-mail: raphael.partouche@edu.ece.fr</p>
+        <p><br/><br/>Nom: <?php echo $_SESSION['Nom']; ?> <br/>Prénom: <?php echo $_SESSION['Prenom']; ?> <br/> Pseudo: <?php echo $_SESSION['Pseudo']; ?><br/>E-mail: <?php echo $_SESSION['Email']; ?> </p>
       </div>
     </div>
 
