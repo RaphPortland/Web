@@ -1,9 +1,12 @@
+<?php
+    session_start();
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Album example · Bootstrap</title>
+    <title>Categories : tous les articles;</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -44,6 +47,9 @@
       </a>
 
         <button type="button" class="btn btn-dark btn-lg">Panier</button>
+        <form method="POST" action="deco.php">
+          <input type="submit" name="deco" class="btn btn-dark btn-lg" value = "deco">
+        </form>
 
 
 
@@ -73,9 +79,13 @@
         </div>
       </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 
 
 <?php 
+    session_start();
 
 define('DB_SERVER', 'localhost');
 define ('DB_USER', 'root');
@@ -91,7 +101,7 @@ $db_found = mysqli_select_db ($db_handle, $database);
 // si la BDD existe, faire le traitement
 
 $i = 0;
-
+$image = "img/BOSE.png";
 
 
     if ($db_found) {
@@ -101,20 +111,25 @@ $i = 0;
 
             	if($i%4 == 3){
 
+
             		echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
             	        <h1 class='my-4'> </h1> </div>";
             		//echo "on print : ". $i;
             	}
             	echo " <div class='col-lg-3 col-md-6 mb-3'>
             	        <h1 class='my-4'> </h1>
-              <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='http://placehold.it/700x400' alt=''></a>
+              <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='".$image."' alt=''></a>
               <div class='card-body'>
                 <h5 class='card-title'>
                   <a href='#'>". $data['Nom'] ."</a>
                 </h5>
-            
+
                 <h6>".$data['Prix']."€</h6>
                 <p class='card-text'>".$data['Description']." </p>
+                <form method= 'POST' action = 'cart.php?id=". $data["Id"]."'> 
+                    <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Ajouter au panier' name = 'addtocart' ></input> </br>
+              </form>
+
               </div>
               <div class='card-footer'>
                 <small class='text-muted'>&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -123,11 +138,6 @@ $i = 0;
 
             	$i = $i +1;
 
-               // echo 'ID : '.$data['Id'].'<br>';
-                //echo 'Nom : '.$data['Nom'].'<br>';
-                //echo 'Description : '.$data['Description'].'<br>';
-                //echo 'Prix : '.$data['Prix'].'<br>';
-                //echo 'Categorie : '.$data['Categorie'].'<br>';
             }// end while
     }//end if
 
@@ -155,6 +165,10 @@ mysqli_close($db_handle);
       <a href="#">Haut de page</a>
     </p>
 </footer>
+
+
+<h1>coucou  <?php echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+  ?></h1>
 
 </body>
 

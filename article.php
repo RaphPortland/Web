@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 
 <html lang="en">
   <head>
@@ -6,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>Article</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -33,6 +36,7 @@
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
   </head>
+
 
 
 
@@ -79,11 +83,12 @@
 </div>
 
 <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-4">
 
       </div>
 
-  <div class="col-lg-10">
+
+  <div class="col-lg-5">
 
 
 <?php
@@ -113,14 +118,19 @@ if ($db_found) {
     while ($data = mysqli_fetch_assoc($result)) {
         
         
-        echo "<div class='card mb-3'>
-  <img class='card-img-top' src='...' alt='Card image cap'>
+        echo "<div class='card mb-4'>
+  <img class='card-img-top' src='img/photoSLALOM.jpg' alt='Card image cap'>
   <div class='card-body'>
-    <h5 class='card-title'>Card title</h5>
-    <p class='card-text'> " . $data["Id"] . "</p>
-    <p class='card-text'><small class='text-muted'>Last updated 3 mins ago</small></p>
+    <h5 class='card-title'>
+                  <span>". $data['Nom'] ."</span>
+    </h5>
+    <h6>".$data['Prix']."€</h6>
+
+    <p class='card-text'>".$data['Description']." </p>
+
+    <p class='card-text'> Id : " . $data["Id"] . "</p>
+    <button class='float-right btn btn-dark btn-sm' id = 'ajoutpanier'>Ajouter au panier</button>
   </div>";
-        
         
         $i = $i + 1;
         
@@ -142,6 +152,10 @@ mysqli_close($db_handle);
 
 ?>
 </div>
+
+      <div class="col-lg-3">
+
+      </div>
 
 </div>
 
@@ -165,6 +179,3 @@ mysqli_close($db_handle);
 
 
   </html>
-
- Download Formatting took: 92 ms PHP Formatter made by Spark Labs  
-Copyright Gerben van Veenendaal  
