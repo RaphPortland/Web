@@ -1,12 +1,19 @@
 <?php
-    session_start();
+session_start();
+
 ?>
+
+
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Categories : tous les articles;</title>
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Panier</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -24,7 +31,6 @@
         -ms-user-select: none;
         user-select: none;
       }
-
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -46,79 +52,28 @@
         <strong>AMA ZONE</strong>
       </a>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function(){
-
-          $("#gotopanier").click(function() {
-            document.location.href="panier.php"; 
-
-          });
-        });
-
-      </script>
-
-        <button type="button" class="btn btn-dark btn-lg" id = "gotopanier">Panier</button>
-
-
-        <?php 
-
-        if(isset($_SESSION['Email'])){
-            echo "<form method='POST' action='deco.php'>
-           <input type='submit' name='deco' class='btn btn-dark btn-lg' value = 'deco'>
-             </form>";
-        }
-        else {
-
-        }
-
-
-        ?>
-
+        <button type="button" class="btn btn-dark btn-lg">Panier</button>
 
 
 
     </div>
   </div>
-
 </header>
 
-<!-- 
+<main role="main">
+
   <section class="jumbotron text-center">
     <div class="container">
-      <div class="text"> <h4> Voici la liste des articles toute categorie confondu : </h4></div>
+      <div class="text"></div>
+
+      <h1> Bievenue dans votre panier </h1>
+      
     </div>
-  </section>			-->
+  </section>
 
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-3">
-        <h1 class="my-4"> </h1>
-        <div class="list-group">
-       		 <a href="categories_all.php" class="btn btn-dark btn-sm ">Tout</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Vetements</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Musique</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Sport et loisirs</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Livres</a> 
-        </div>
-      </div>
-
-
-
-<script type="text/javascript">
-  
-function onchecklesstocks(stockenquestion, nombredanslepanier){
-
-  alert("Stock en question : " + stockenquestion + "Nombre dans le panier : " + nombredanslepanier);
-
-}
-
-
-</script>
+<div class='row'>
 
 <?php 
-    session_start();
 
 define('DB_SERVER', 'localhost');
 define ('DB_USER', 'root');
@@ -135,18 +90,15 @@ $db_found = mysqli_select_db ($db_handle, $database);
 
 $i = 0;
 $image = "img/BOSE.png";
-$Stock = array();
-$workwith = $_SESSION['newvaleueonthecart'];
 
 
     if ($db_found) {
-        $sql = "SELECT* FROM Items";
+       // $sql = "SELECT* FROM Items  ";
+        $sql = "SELECT * FROM Items WHERE Id IN (".implode(',',array_keys($_SESSION['newvaleueonthecart'])).")";
         $result = mysqli_query ($db_handle, $sql);
             while ($data = mysqli_fetch_assoc($result)){
 
-              $Stock[$data["Id"]]= $data["Stock"];
-
-            	if($i%4 == 3){
+            	if($i%5 == 4){
 
 
             		echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
@@ -164,8 +116,8 @@ $workwith = $_SESSION['newvaleueonthecart'];
                 <h6>".$data['Prix']."€</h6>
                 <p class='card-text'>".$data['Description']." </p>
                 <form method= 'POST' action = 'cart.php?id=". $data["Id"]."'> 
-                    <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Ajouter au panier' name = 'addtocart' onClick='onchecklesstocks(".$Stock[$data["Id"]].",".$workwith[$data["Id"]].")' ></input> </br>
-                </form>
+                    <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Ajouter au panier' name = 'addtocart' ></input> </br>
+              </form>
 
               </div>
               <div class='card-footer'>
@@ -186,9 +138,17 @@ $workwith = $_SESSION['newvaleueonthecart'];
 // Fermer la connection 
 mysqli_close($db_handle);
 ?>
-		
+
 </div>
 
+
+
+
+
+
+  
+
+</main>
 
 <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">Site AMA'ZONE &copy; ECE AMA'ZONE_2019</p>
@@ -198,14 +158,23 @@ mysqli_close($db_handle);
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
     <p>Ou nous retrouver? Visiter notre<a href="https://getbootstrap.com/"> Facebook</a> ou notre page <a href="/docs/4.3/getting-started/introduction/">Instagram</a>.</p>
-     <p class="float-right">
+    <p class="float-right">
       <a href="#">Haut de page</a>
     </p>
 </footer>
+
+</body>
 
 
 <h1>coucou  <?php echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
   ?></h1>
 
-</body>
+
+
+</html>
+
+
+
+
+
 

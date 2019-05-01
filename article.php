@@ -129,8 +129,10 @@ if ($db_found) {
     <p class='card-text'>".$data['Description']." </p>
 
     <p class='card-text'> Id : " . $data["Id"] . "</p>
-    <button class='float-right btn btn-dark btn-sm' id = 'ajoutpanier'>Ajouter au panier</button>
-  </div>";
+                <form method= 'POST' action = 'cart.php?id=". $data["Id"]."'> 
+                    <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Ajouter au panier' name = 'addtocart' ></input> </br>
+              </form>
+                </div>";
         
         $i = $i + 1;
         
