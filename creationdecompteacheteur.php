@@ -6,16 +6,16 @@ define ('DB_USER', 'root');
 define ('DB_PASS', 'root');
 
 $nom = $_POST["Nom"];
-$prenom = $_POST["Prenom"];
+$prenom = $_POST["prenom"];
 
 $pseudo = $_POST["Pseudo"];
 
 $email = $_POST["Email"];
-$password = $_POST["Password"];
+$password = $_POST["mdp"];
 
 // identifier le nom de la base de données 
 
-$database = "projetweb";
+$database = "Projetweb";
 //connecter l'utilsateur dans la BDD
 $db_handle = mysqli_connect (DB_SERVER, DB_USER, DB_PASS);
 $db_found = mysqli_select_db ($db_handle, $database);
@@ -23,7 +23,7 @@ $db_found = mysqli_select_db ($db_handle, $database);
 // si la BDD existe, faire le traitement
 
     if ($db_found) {
-        $sql = "INSERT INTO `Acheteur` (`Pseudo`, `Email`, `Password`, `Nom`, `Prenom`) VALUES ('". $pseudo. "', '" .$email. "','".$passeword."', '" .$nom. "','".$prenom."')";
+        $sql = "INSERT INTO `Acheteur` (`Pseudo`, `Email`, `Password`, `Nom`, `Prenom`) VALUES ('". $pseudo. "', '" .$email. "','".$password."', '" .$nom. "','".$prenom."')";
 
 
  			session_start();
@@ -33,6 +33,7 @@ $db_found = mysqli_select_db ($db_handle, $database);
                 $_SESSION['Nom'] = $nom;
                 $_SESSION['Pseudo'] = $pseudo;
                 $_SESSION['Prenom'] = $prenom;
+                $_SESSION['Statut'] = "Acheteur";
 
 		$result = mysqli_query($db_handle, $sql);
 		header('Location: categories.html');

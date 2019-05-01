@@ -31,6 +31,7 @@ $db_found = mysqli_select_db ($db_handle, $database);
                 $_SESSION['Nom'] = $data['Nom'];
                 $_SESSION['Pseudo'] = $data['Pseudo'];
                 $_SESSION['Prenom'] = $data['Prenom'];
+                $_SESSION['Statut'] = "Vendeur";
 
 
 

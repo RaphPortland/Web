@@ -90,6 +90,18 @@ $db_found = mysqli_select_db ($db_handle, $database);
 
 $i = 0;
 $image = "img/BOSE.png";
+$workwith = $_SESSION['newvaleueonthecart'];
+
+
+    foreach($workwith as $key => &$value){
+        if ($value==0){
+            unset($workwith[$key]);
+
+        }
+    }
+$_SESSION['newvaleueonthecart'] = $workwith ;
+$workwith = $_SESSION['newvaleueonthecart'];
+
 
 
     if ($db_found) {
@@ -113,10 +125,10 @@ $image = "img/BOSE.png";
                   <a href='#'>". $data['Nom'] ."</a>
                 </h5>
 
-                <h6>".$data['Prix']."€</h6>
+                <h6>".$data['Prix']."€    Q : ".$workwith[$data["Id"]]."</h6>
                 <p class='card-text'>".$data['Description']." </p>
-                <form method= 'POST' action = 'cart.php?id=". $data["Id"]."'> 
-                    <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Ajouter au panier' name = 'addtocart' ></input> </br>
+                <form method= 'POST' action = 'cart.php?id=". $data["Id"]."&action=supp'> 
+                    <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Supprimer du panier' name = 'deletefromcart' ></input> </br>
               </form>
 
               </div>

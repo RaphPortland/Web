@@ -33,6 +33,8 @@ $db_found = mysqli_select_db ($db_handle, $database);
                 $_SESSION['Nom'] = $nom;
                 $_SESSION['Pseudo'] = $pseudo;
                 $_SESSION['Prenom'] = $prenom;
+                $_SESSION['Statut'] = "Vendeur";
+
 
 		$result = mysqli_query($db_handle, $sql);
 		header('Location: profilvendeur.php');

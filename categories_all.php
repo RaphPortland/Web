@@ -153,6 +153,13 @@ $workwith = $_SESSION['newvaleueonthecart'];
             	        <h1 class='my-4'> </h1> </div>";
             		//echo "on print : ". $i;
             	}
+              if(isset($workwith[$data["Id"]])){
+
+              }
+              else {
+                $workwith[$data["Id"]] = 0;
+              }
+
             	echo " <div class='col-lg-3 col-md-6 mb-3'>
             	        <h1 class='my-4'> </h1>
               <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='".$image."' alt=''></a>
@@ -204,8 +211,10 @@ mysqli_close($db_handle);
 </footer>
 
 
-<h1>coucou  <?php echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
-  ?></h1>
+<h1> coucou  <?php echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+  ?>
+
+  </h1>
 
 </body>
 
