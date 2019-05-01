@@ -71,7 +71,6 @@
     <p class="lead">Vous êtes vendeur sur AMA'ZONE ? Vous pouvez mettre en vente un ou plusieurs articles !</p>
   </div>
 </section>
-<h1> <?php echo $_SESSION['Email']; ?> </h1>
 
     <div class="container">
 
@@ -104,7 +103,7 @@
         
         <div class="col-md-5">
           <div class="card mb-4 shadow-sm">
-            <a href="ajouterItems.html"><img src="img/ajouteritems.jpg" alt="responsive" class="img-thumbnail"></a> </text></svg>
+            <a href="ajouterItems.php"><img src="img/ajouteritems.jpg" alt="responsive" class="img-thumbnail"></a> </text></svg>
             <div class="card-body">
               <p class="card-text"> Ajouter un ou plusieurs articles</p>
               <div class="d-flex justify-content-between align-items-center">

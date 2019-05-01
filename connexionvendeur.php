@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 define('DB_SERVER', 'localhost');
 define ('DB_USER', 'root');
@@ -22,7 +23,6 @@ $db_found = mysqli_select_db ($db_handle, $database);
             while ($data = mysqli_fetch_assoc($result)){
                 echo 'Email : '.$data['Email'].'<br>';
                 echo 'Password : '.$data['Password'].'<br>';
-                header('Location: profilvendeur.php');
                 // On démarre la session AVANT d'écrire du code HTML
                 session_start();
 
@@ -33,6 +33,7 @@ $db_found = mysqli_select_db ($db_handle, $database);
                 $_SESSION['Prenom'] = $data['Prenom'];
                 $_SESSION['Statut'] = "Vendeur";
 
+                header('Location: profilvendeur.php');
 
 
             }// end while
