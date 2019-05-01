@@ -125,8 +125,8 @@ $workwith = $_SESSION['newvaleueonthecart'];
                   <a href='#'>". $data['Nom'] ."</a>
                 </h5>
 
-                <h6>".$data['Prix']."€    Q : ".$workwith[$data["Id"]]."</h6>
-                <p class='card-text'>".$data['Description']." </p>
+                <h6>".$data['Prix']."€ </h6>
+                <p class='card-text'> Quantité dans le panier : ".$workwith[$data["Id"]]."x </p>
                 <form method= 'POST' action = 'cart.php?id=". $data["Id"]."&action=supp'> 
                     <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Supprimer du panier' name = 'deletefromcart' ></input> </br>
               </form>
@@ -153,12 +153,27 @@ mysqli_close($db_handle);
 
 </div>
 
-
-
-
-
-
+<div class="row">
   
+  <div class="col-5"> </div>
+  <div class="col-2">
+    <button type="button" class="btn btn-primary btn-lg" id = "passageachat">Passage a la suite</button>
+  </div>
+    <div class="col-5"></div>
+</div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+
+          $("#passageachat").click(function() {
+            document.location.href="panier.php"; 
+
+          });
+        });
+
+      </script>
+
 
 </main>
 
