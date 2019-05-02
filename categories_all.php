@@ -30,6 +30,42 @@
           font-size: 3.5rem;
         }
       }
+
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: center;
+}
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: inline-block;
+}
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+  /**color: #FFFFFF;*/
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+
+
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
@@ -40,13 +76,40 @@
   <body>
     <header>
 
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      <a href="index.html" class="navbar-brand d-flex align-items-center">
-        <strong>AMA ZONE</strong>
-      </a>
+ <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-info">
+  <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="img/pierre.png"></a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <ul id="menu-deroulant">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="categories.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégories</a>
+            <ul>
+              <li><a class="text-dark" href="categories.html">Livres</a></li>
+              <li><a class="text-dark" href="categories.html">Musique</a></li>
+              <li><a class="text-dark"href="categories.html">Vêtements</a></li>
+              <li><a class="text-dark" href="categories.html">Sport et Loisirs</a></li>
+            </ul>
+
+        </li>
+      </ul>
+      <a class="nav-link text-white" href="ventesflash.html">Ventes Flash</a>
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <a href="panier.php" class="btn btn-lg btn-info"><img src=img/panier.png></a> 
+      <a class="nav-link text-white" href="deco.php">Se déconnecter</a>
+    </form>
+  </div>
+</nav>
+
+   <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+
       <script type="text/javascript">
         $(document).ready(function(){
 
@@ -74,6 +137,7 @@
 
 
         ?>
+      -->
 
 
 
@@ -82,6 +146,7 @@
   </div>
 
 </header>
+<br/> <br/><br/>
 
 <!-- 
   <section class="jumbotron text-center">

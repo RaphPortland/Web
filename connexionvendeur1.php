@@ -27,94 +27,158 @@ session_start();
 
 
               <style>
-                .bd-placeholder-img {
-                  font-size: 1.125rem;
-                  text-anchor: middle;
-                  -webkit-user-select: none;
-                  -moz-user-select: none;
-                  -ms-user-select: none;
-                  user-select: none;
-                }
-                @media (min-width: 768px) {
-                  .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                  }
-                }
-              </style>
-              <!-- Custom styles for this template -->
-              <link href="album.css" rel="stylesheet">
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+        
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: center;
+}
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: inline-block;
+}
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+  /**color: #FFFFFF;*/
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
 
-            </head>
 
+  <body>
 
+    <header>
 
-            <body class="bg-white">
-              <header>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-info">
+  <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="img/pierre.png"></a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <div class="navbar navbar-dark bg-info shadow-sm">
-              <div class="container d-flex justify-content-between">
-                <a href="index.html" class="navbar-brand d-flex align-items-center">
-                  <strong>AMA'ZONE ECE</strong>
-                </a>
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <ul id="menu-deroulant">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="categories.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégories</a>
+            <ul>
+              <li><a class="text-dark" href="categories.html">Livres</a></li>
+              <li><a class="text-dark" href="categories.html">Musique</a></li>
+              <li><a class="text-dark"href="categories.html">Vêtements</a></li>
+              <li><a class="text-dark" href="categories.html">Sport et Loisirs</a></li>
+            </ul>
 
-                  <button type="button" class="btn btn-dark btn-lg">Panier</button>
+        </li>
+      </ul>
+      <a class="nav-link text-white" href="ventesflash.html">Ventes Flash</a>
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <a href="panier.php" class="btn btn-lg btn-info"><img src=img/panier.png></a> 
+      <a class="nav-link text-white" href="deco.php">Se déconnecter</a>
+    </form>
+  </div>
+</nav>
+      
+</header>
 
+ <br/> <br/> <br/>
+    <section class="jumbotron text-center">
+    
+    <div class="py-3 text-center text-info">
+       <h2>Identifiez-vous</h2>
+       <img class="mb-4" src="img/connexion.png" alt="" width="72" height="72">
+    </div>
+    </section>
 
-                  <div class="dropdown">
-                    <a class="btn btn-default bg-info dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Catégories
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Livres</a>
-                      <a class="dropdown-item" href="#">Vêtements</a>
-                      <a class="dropdown-item" href="#">Musique</a>
-                      <a class="dropdown-item" href="#">Sports</a>
-                    </div>
-                  </div>    
-
-
-                  <a class="nav-link text-white" href="ventesflash.html">Ventes Flash</a>
-
-                  <a href="ventesflash.html" class="btn btn-lg btn-info"><img src=img/baseline_local_grocery_store_white_18dp.png></a> 
-
-
-              </div>
+<div class="container">      
+    <div class="row">
+    <div class="col-md-12 order-md-1">
+      <form class="form-signin" action="connexionvendeur.php" method="POST">
+        <div class="row">
+            <div class="col-md-3 mb-3">
             </div>
-          </header>
-
-          <main role="main">
-
-            <section class="jumbotron text-center">
-              <div class="container">
-                <div class="text"></div>
-
-                  <form class="form-signin" action="connexionvendeur.php" method="POST">
-            <img class="mb-4" src="img/connexion.jpg" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Identifiez-vous:</h1>
-            <label for="inputEmail" class="sr-only">Adresse e-mail</label>
-            <input type="email" id="inputEmail" name = "mail" class="form-control" placeholder="Adresse e-mail" required autofocus>
-            <label for="inputPassword" class="sr-only">Mot de passse</label>
-            <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-            <div class="checkbox mb-3">
-              <label>
+          <div class="col-md-6 mb-3">
+            <label for="pseudo">Adresse e-mail</label>
+            <input type="text" class="form-control border border-dark" id="pseudo" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+            <div class="col-md-3 mb-3">
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-md-3 mb-3">
+            </div>
+          <div class="col-md-6 mb-3">
+            <label for="mp">Mot de passe</label>
+            <input type="text" class="form-control border border-dark" id="mp" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+            <div class="col-md-3 mb-3">
+            </div>
+          </div>
+          <div class="checkbox mb-3 text-center">
+            <label>
                 <input type="checkbox" value="souvenir-moi"> Se souvenir de moi
-              </label>
-            </div>  
-
-            <div class="alert " role="alert">
+            </label>
+        </div> 
+          
+          <div class="alert text-center" role="alert">
             <a href="creercompte.html" class="alert-link">Je n'ai pas encore de compte.</a>
+        </div>
+       
+           <div class="row">
+            <div class="col-md-3 mb-3">
             </div>
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-          </form>
-
-                
-              </div>
-            </section>
-            
-
-          </main>
+          <div class="col-md-6 mb-3">
+        <button class="btn btn-light btn-outline-info btn-lg btn-block" type="submit">Connexion</button>
+          </div>
+            <div class="col-md-3 mb-3">
+            </div>
+          </div>   
+          
+        </form>
 
           <footer class="my-5 pt-5 text-muted text-center text-small">
               <p class="mb-1">Site AMA'ZONE &copy; ECE AMA'ZONE_2019</p>
