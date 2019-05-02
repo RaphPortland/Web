@@ -26,8 +26,8 @@ $db_found = mysqli_select_db ($db_handle, $database);
         $sql = "INSERT INTO `Vendeur` (`Pseudo`, `Email`, `Password`, `Nom`, `Prenom`) VALUES ('". $pseudo. "', '" .$email. "','".$mdp."', '" .$nom. "','".$prenom."')";
 
 
- 			session_start();
-
+                session_destroy();
+                session_start();
                 // On s'amuse à créer quelques variables de session dans $_SESSION
                 $_SESSION['Email'] = $email;
                 $_SESSION['Nom'] = $nom;

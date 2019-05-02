@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION["tarif"]=0;
 ?>
 
 
@@ -166,10 +166,11 @@ $workwith = $_SESSION['newvaleueonthecart'];
             	if($i%5 == 4){
 
 
-            		echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
-            	        <h1 class='my-4'> </h1> </div>";
-            		//echo "on print : ". $i;
+                		echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
+                	        <h1 class='my-4'> </h1> </div>";
+                		//echo "on print : ". $i;
             	}
+
             	echo " <div class='col-lg-3 col-md-6 mb-3'>
             	        <h1 class='my-4'> </h1>
               <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='".$image."' alt=''></a>
@@ -189,6 +190,7 @@ $workwith = $_SESSION['newvaleueonthecart'];
                 <small class='text-muted'>&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
             </div>";
+            $_SESSION["tarif"]= $_SESSION["tarif"] + $data['Prix']*$workwith[$data["Id"]];
 
             	$i = $i +1;
 
@@ -206,11 +208,14 @@ mysqli_close($db_handle);
 
 </div>
 
+
 <div class="row">
   
-  <div class="col-5"> </div>
+  <div class="col-5"> 
+
+  </div>
   <div class="col-2">
-    <button type="button" class="btn btn-light btn-outline-info btn-lg btn-block" id = "passageachat">Passage a la suite</button>
+    <button type="button" class="btn btn-light btn-outline-info btn-lg btn-block" id = "passageachat">Payer : <?php echo "".$_SESSION["tarif"]."€"; ?></button>
   </div>
     <div class="col-5"></div>
 </div>
@@ -220,7 +225,7 @@ mysqli_close($db_handle);
         $(document).ready(function(){
 
           $("#passageachat").click(function() {
-            document.location.href="panier.php"; 
+            document.location.href="livraison.php"; 
 
           });
         });

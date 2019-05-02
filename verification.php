@@ -1,4 +1,3 @@
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -6,16 +5,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Connexion</title>
+    <title>Vérification</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
 
-    <!-- Bootstrap core CSS -->
+      
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-   <style>
+    <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -105,27 +102,26 @@
 </nav>
       
 </header>
-    
-    <br/> <br/> <br/>
-    <section class="jumbotron text-center">
-    
-  <div class="py-3 text-center text-info">
-    <h2>Identifiez-vous</h2>
-      <img class="mb-4" src="img/connexion.png" alt="" width="72" height="72">
+      
+<section class="jumbotron text-center">
+    <br/> <br/>
+  <div class="py-5 text-center text-info">
+    <h2>Vérification</h2>
+    <p class="lead"></p>
   </div>
 </section>
      
     <div class="container">      
     <div class="row">
     <div class="col-md-12 order-md-1">
-
-      <form class="needs-validation" action="connexionacheteur.php" method="POST">
+      <form class="needs-validation" action="checkconnexion.php" method="POST">
+          
         <div class="row">
             <div class="col-md-3 mb-3">
             </div>
           <div class="col-md-6 mb-3">
-            <label for="pseudo">Adresse e-mail</label>
-            <input type="text" class="form-control border border-dark" id="pseudo" placeholder="" name = "mail" required>
+            <label for="pseudo">Mail</label>
+            <input type="text" class="form-control border border-dark" id="mail" name = "mail" placeholder="" value="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -140,7 +136,7 @@
             </div>
           <div class="col-md-6 mb-3">
             <label for="mp">Mot de passe</label>
-            <input type="text" class="form-control border border-dark" id="mp" placeholder="" value="" name = "password" required>
+            <input type="password" class="form-control border border-dark" id="mp" name ="password" placeholder="" value="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -148,21 +144,12 @@
             <div class="col-md-3 mb-3">
             </div>
           </div>
-          <div class="checkbox mb-3 text-center">
-            <label>
-                <input type="checkbox" value="souvenir-moi"> Se souvenir de moi
-            </label>
-        </div> 
-          
-          <div class="alert text-center" role="alert">
-            <a href="creercompte.html" class="alert-link">Je n'ai pas encore de compte.</a>
-        </div>
        
            <div class="row">
             <div class="col-md-3 mb-3">
             </div>
           <div class="col-md-6 mb-3">
-        <input class="btn btn-light btn-outline-info btn-lg btn-block" type="submit" value="Connexion"></input>
+        <button class="btn btn-light btn-outline-info btn-lg btn-block" type="submit">Valider</button>
           </div>
             <div class="col-md-3 mb-3">
             </div>
@@ -182,10 +169,8 @@
       <a href="#">Haut de page</a>
     </p>
    </footer>
-        </div>
+</div>
         </div>
       </div>
 </body>
-
-
 </html>

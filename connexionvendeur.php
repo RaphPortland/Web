@@ -24,12 +24,13 @@ $db_found = mysqli_select_db ($db_handle, $database);
                 echo 'Email : '.$data['Email'].'<br>';
                 echo 'Password : '.$data['Password'].'<br>';
                 // On démarre la session AVANT d'écrire du code HTML
+                session_destroy();
                 session_start();
 
                 // On s'amuse à créer quelques variables de session dans $_SESSION
                 $_SESSION['Email'] = $data['Email'];
                 $_SESSION['Nom'] = $data['Nom'];
-                $_SESSION['Pseudo'] = $data['Pseudo'];
+                $_SESSION['Pseudo'] = $data['PseudoVendeur'];
                 $_SESSION['Prenom'] = $data['Prenom'];
                 $_SESSION['Statut'] = "Vendeur";
 

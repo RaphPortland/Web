@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 define('DB_SERVER', 'localhost');
 define ('DB_USER', 'root');
 define ('DB_PASS', 'root');
@@ -20,18 +20,20 @@ $db_found = mysqli_select_db ($db_handle, $database);
         $sql = "SELECT* FROM Acheteur WHERE Email = '". $emailacheteur."' AND Password = '". $passwordacheteur. "'";
         $result = mysqli_query ($db_handle, $sql);
             while ($data = mysqli_fetch_assoc($result)){
-                echo 'Email : '.$data['Email'].'<br>';
-                echo 'Password : '.$data['Password'].'<br>';
-                header('Location: categories.html');
-                // On démarre la session AVANT d'écrire du code HTML
-                session_start();
 
+                session_destroy();
+                session_start();
                 // On s'amuse à créer quelques variables de session dans $_SESSION
                 $_SESSION['Email'] = $data['Email'];
                 $_SESSION['Nom'] = $data['Nom'];
-                $_SESSION['Pseudo'] = $data['Pseudo'];
+                $_SESSION['Pseudo'] = $data['PseudoVendeur'];
                 $_SESSION['Prenom'] = $data['Prenom'];
                 $_SESSION['Statut'] = "Acheteur";
+
+                    header('Location: categories.html');
+                
+                // On démarre la session AVANT d'écrire du code HTML
+
 
 
 

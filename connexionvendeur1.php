@@ -135,7 +135,14 @@ session_start();
             </div>
           <div class="col-md-6 mb-3">
             <label for="pseudo">Adresse e-mail</label>
-            <input type="text" class="form-control border border-dark" id="pseudo" placeholder="" value="" required>
+
+
+            <input type="email" id="pseudo" name = "mail" class="form-control" placeholder="Adresse e-mail" required autofocus>
+
+
+
+
+
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -149,8 +156,8 @@ session_start();
             <div class="col-md-3 mb-3">
             </div>
           <div class="col-md-6 mb-3">
-            <label for="mp">Mot de passe</label>
-            <input type="text" class="form-control border border-dark" id="mp" placeholder="" value="" required>
+            <label for="inputPassword" class="sr-only">Mot de passse</label>
+            <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>

@@ -126,7 +126,7 @@
 
         <?php 
 
-        if(isset($_SESSION['Email'])){
+       /* if(isset($_SESSION['Email'])){
             echo "<form method='POST' action='deco.php'>
            <input type='submit' name='deco' class='btn btn-dark btn-lg' value = 'deco'>
              </form>";
@@ -135,7 +135,7 @@
 
         }
 
-
+*/
         ?>
       -->
 
@@ -175,7 +175,9 @@
   
 function onchecklesstocks(stockenquestion, nombredanslepanier){
 
-  alert("Stock en question : " + stockenquestion + "Nombre dans le panier : " + nombredanslepanier);
+  if(stockenquestion - nombredanslepanier <=0){
+    alert("Stock : "+ stockenquestion + " Panier : "+ stockenquestion + " Il est donc impossible de rajouter cette item au panier car il y en virtuellement plus en Stock.");
+  }
 
 }
 
@@ -211,6 +213,7 @@ $workwith = $_SESSION['newvaleueonthecart'];
 
               $Stock[$data["Id"]]= $data["Stock"];
 
+
             	if($i%4 == 3){
 
 
@@ -224,7 +227,7 @@ $workwith = $_SESSION['newvaleueonthecart'];
               else {
                 $workwith[$data["Id"]] = 0;
               }
-
+              $stockvirtu = $data['Stock']-$workwith[$data["Id"]];
             	echo " <div class='col-lg-3 col-md-6 mb-3'>
             	        <h1 class='my-4'> </h1>
               <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='".$image."' alt=''></a>
@@ -235,7 +238,9 @@ $workwith = $_SESSION['newvaleueonthecart'];
 
                 <h6>".$data['Prix']."€</h6>
                 <p class='card-text'>".$data['Description']." </p>
-                <form method= 'POST' action = 'cart.php?id=". $data["Id"]."'> 
+                 <p class='card-text'>Stock virtuel: ".$stockvirtu." </p>
+
+                <form method= 'POST' action = 'cart.php?id=". $data["Id"]."&Stock=".$Stock[$data["Id"]]."&Panier=".$workwith[$data["Id"]]."'> 
                     <input type= 'submit' class='float-right btn btn-dark btn-sm' value='Ajouter au panier' name = 'addtocart' onClick='onchecklesstocks(".$Stock[$data["Id"]].",".$workwith[$data["Id"]].")' ></input> </br>
                 </form>
 
