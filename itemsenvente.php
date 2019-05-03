@@ -144,7 +144,6 @@ $db_found = mysqli_select_db ($db_handle, $database);
 
 
 $i = 0;
-$image = "img/BOSE.png";
 
     if ($db_found) {
         $sql = "SELECT * FROM Items WHERE Vendeur ='".$_SESSION["Email"]."'";
@@ -161,7 +160,7 @@ $image = "img/BOSE.png";
 
             	echo " <div class='col-lg-3 col-md-6 mb-3'>
             	        <h1 class='my-4'> </h1>
-              <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='".$image."' alt=''></a>
+              <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='".$data["Photo"]."' alt=''></a>
               <div class='card-body'>
                 <h5 class='card-title'>
                   <a href='#'>".$data['Nom']."</a>

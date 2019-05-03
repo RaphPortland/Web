@@ -20,9 +20,8 @@ $db_found = mysqli_select_db ($db_handle, $database);
     if ($db_found) {
         $sql = "SELECT* FROM Vendeur WHERE Email = '". $emailvendeur."' AND Password = '". $passwordvendeur. "'";
         $result = mysqli_query ($db_handle, $sql);
+        if(mysqli_num_rows ($result)==1){
             while ($data = mysqli_fetch_assoc($result)){
-                echo 'Email : '.$data['Email'].'<br>';
-                echo 'Password : '.$data['Password'].'<br>';
                 // On démarre la session AVANT d'écrire du code HTML
                 session_destroy();
                 session_start();
@@ -33,11 +32,19 @@ $db_found = mysqli_select_db ($db_handle, $database);
                 $_SESSION['Pseudo'] = $data['PseudoVendeur'];
                 $_SESSION['Prenom'] = $data['Prenom'];
                 $_SESSION['Statut'] = "Vendeur";
+                $_SESSION['Photo'] = $data["Photo"];
 
-                header('Location: profilvendeur.php');
+                    header('Location: profilvendeur.php');
 
 
             }// end while
+        } else {
+
+                    header('Location: connexionvendeur1.php?action=message');
+
+        }
+
+
     }//end if
 
 // si la BDD n'existe pas 

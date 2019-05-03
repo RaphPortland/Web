@@ -163,7 +163,6 @@ $db_found  = mysqli_select_db($db_handle, $database);
 
 $i = 0;
 $i = 0;
-$image = "img/BOSE.png";
 $Stock = array();
 $workwith = $_SESSION['newvaleueonthecart'];
 
@@ -176,7 +175,7 @@ if ($db_found) {
 
         
         echo "<div class='card mb-4'>
-  <img class='card-img-top' src='img/photoSLALOM.jpg' alt='Card image cap'>
+  <img class='card-img-top' src='".$data["Photo"]."' alt='Card image cap'>
   <div class='card-body'>
     <h5 class='card-title'>
                   <span>". $data['Nom'] ."</span>

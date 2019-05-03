@@ -147,19 +147,18 @@ session_start();
         </div>
             
         <div class="row">
-        <form class="needs-validation" method="POST" action="verif_payement.php">
           <div class="col-md-6 mb-3">
-              
+            <form class="needs-validation" method="POST" action="verif_payement.php">
             <label for="NomCB">Nom de la carte</label>
-            <input type="text" name = "Nomdecarte" class="form-control" id="NomCB" placeholder="Nom de la carte" required>
+            <input type="text" name = "Nomdecarte" class="form-control border border-dark" id="NomCB" placeholder="" required>
             <small class="text-muted">Nom complet affiché sur la carte</small>
             <div class="invalid-feedback">
               Name on card is required
             </div>
-               
+          </div>
           <div class="col-md-6 mb-3">
             <label for="NumeroCB">Numéro de la carte</label>
-            <input type="text" class="form-control" id="NumeroCB" name = "num_carte" placeholder="Numéro de la carte" required>
+            <input type="text" class="form-control border border-dark" id="NumeroCB" name = "num_carte" placeholder="" required>
             <div class="invalid-feedback">
               Credit card number is required
             </div>
@@ -168,14 +167,14 @@ session_start();
         <div class="row">
           <div class="col-md-3 mb-3">
             <label for="Expiration">Date d'expiration</label>
-            <input type="text" name="Date" class="form-control" id="Expiration" placeholder="Date d'expiration" required>
+            <input type="text" name="Date" class="form-control border border-dark" id="Expiration" placeholder="" required>
             <div class="invalid-feedback">
               Expiration date required
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="CodeSecurite">Code de sécurité</label>
-            <input type="text" name="coddesecu" class="form-control" id="CodeSecurite" placeholder="Code de sécurité" required>
+            <input type="text" name="coddesecu" class="form-control border border-dark" id="CodeSecurite" placeholder="" required>
             <small class="text-muted">(3 ou 4 chiffres, selon la carte)</small>
             <div class="invalid-feedback">
               Security code required
@@ -183,12 +182,11 @@ session_start();
           </div>
         </div>
         <hr class="mb-4">
-        <input class="btn btn-light btn-outline-info btn-lg btn-block" type="submit" value="Valider">
+        <input class="btn btn-light btn-outline-info btn-lg btn-block" type="submit" value="Valider"></input>
       </form>
     </div>
   </div>
 
-  
 <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">Site AMA'ZONE &copy; ECE AMA'ZONE_2019</p>
     <ul class="list-inline">
@@ -200,9 +198,9 @@ session_start();
     <p class="float-right">
       <a href="#">Haut de page</a>
     </p>
-</footer>
-      
-</div>
+</footer>  
+
+
 </div>
 </body>
 </html>

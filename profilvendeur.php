@@ -129,9 +129,12 @@
     <div class="container">
 
     <div class="row"> 
-      <div class="col-md-2">
+      <div class="col-md-8">
         <h4>Votre profil</h4>
-        <p><img src="img/raph.jpg"></p><br/><br/> 
+        <p><img src="img/bose.png"></p><br/><br/>      <!-- <p><img src=<?php //echo $_SESSION['Photo']; ?>></p><br/><br/> -->
+
+
+
       </div>
       <div class="col-md-4">
         <p><br/><br/>Nom: <?php echo $_SESSION['Nom']; ?> <br/>Prénom: <?php echo $_SESSION['Prenom']; ?> <br/> Pseudo: <?php echo $_SESSION['Pseudo']; ?><br/>E-mail: <?php echo $_SESSION['Email']; ?> </p>

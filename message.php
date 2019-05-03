@@ -4,6 +4,59 @@
 session_start();
 
 
+        define('DB_SERVER', 'localhost');
+        define ('DB_USER', 'root');
+        define ('DB_PASS', 'root');
+
+        // identifier le nom de la base de données 
+
+        $database = "Projetweb";
+        //connecter l'utilsateur dans la BDD
+        $db_handle = mysqli_connect (DB_SERVER, DB_USER, DB_PASS);
+        $db_found = mysqli_select_db ($db_handle, $database);
+        $newStock = 0;
+        $id_ = 0;
+        $workwith = $_SESSION['newvaleueonthecart'];
+
+        // si la BDD existe, faire le traitement
+
+            if ($db_found) {
+
+                 $sql = "SELECT * FROM Items WHERE Id IN (".implode(',',array_keys($_SESSION['newvaleueonthecart'])).")";
+
+                //$sql = "SELECT * FROM Items WHERE Id ='".$_GET["id"]."'";
+                $result = mysqli_query ($db_handle, $sql);
+                    while ($data = mysqli_fetch_assoc($result)){
+
+
+                      $newStock = $data["Stock"]-$workwith[$data["Id"]]; 
+                      if($newStock == 0){
+                        $sql2 = "DELETE FROM Items WHERE Id ='".$data["Id"]."'";
+                        $result2 = mysqli_query ($db_handle, $sql2);
+                        //header('Location: itemsenvente.php');
+
+                      } else {
+                        $sql23 = "UPDATE Items SET Stock ='".$newStock."' WHERE Id ='".$data["Id"]."'";
+                        $result23 = mysqli_query ($db_handle, $sql23);
+                          //header('Location: itemsenvente.php');
+
+                      }
+
+                   
+                    }//end while
+            }//end if
+
+        // si la BDD n'existe pas 
+            else {
+                echo 'Database not found';
+            }
+
+        // Fermer la connection 
+        mysqli_close($db_handle);
+
+
+
+
 ?>
 
 
@@ -124,7 +177,7 @@ session_start();
     <div class="container">      
    
         <div class="text-center ">
-        <p>Un mail de confirmation vous a été envoyé a l'adresse suivante : <?php echo $_SESSION["Email"]; ?> </br>Votre commande sera livrée sous un délai de 6 à 9 jours. Merci pour votre commande ! </p> 
+        <p>Un mail de confirmation vous a été envoyé a l'adresse suivante : <?php session_start(); echo $_SESSION["Email"]; ?> </br>Votre commande sera livrée sous un délai de 6 à 9 jours. Merci pour votre commande !<br>Voici l'adresse de livraison : <?php echo $_SESSION["Adresselivraison"]; ?> <?php session_start(); echo $_SESSION["CodePostal"]; ?> <?php session_start(); echo $_SESSION["Ville"]; ?> </p> 
             <b>A bientôt !</b>
         </div>
     </div>
@@ -143,3 +196,6 @@ session_start();
 </body>
 
 </html>
+
+
+<?php session_start(); session_destroy(); ?>

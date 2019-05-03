@@ -24,7 +24,6 @@ $db_found = mysqli_select_db ($db_handle, $database);
         while ($data = mysqli_fetch_assoc($result)){
 
 	        if(mysqli_num_rows ($result)== 1){
-	                session_destroy();
 	                session_start();
 	                // On s'amuse à créer quelques variables de session dans $_SESSION
 	                $_SESSION['Email'] = $data['Email'];

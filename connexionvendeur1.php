@@ -126,9 +126,38 @@ session_start();
     </div>
     </section>
 
-<div class="container">      
+<div class="container">   
+    <div class="row" style ="color: red;">
+
+      <div class="col-md-3 mb-3">
+            </div>
+          <div class="col-md-6 mb-3">
+
+
+          <?php
+
+        if($_GET["action"]=="message"){
+          echo "<h3> Email ou Mot de passe incorrect </h3>";
+        }
+
+
+
+      ?>
+
+                  </div>
+            <div class="col-md-3 mb-3">
+            </div>
+       </div>
+
+
+    </div>
     <div class="row">
+
+
     <div class="col-md-12 order-md-1">
+
+
+
       <form class="form-signin" action="connexionvendeur.php" method="POST">
         <div class="row">
             <div class="col-md-3 mb-3">

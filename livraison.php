@@ -154,11 +154,6 @@ session_start();
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="Adresse2">Adresse 2 </label>
-          <input type="text" class="form-control" name ="Adresse2" id="Adresse2" placeholder="Adresse 2">
-        </div>
-
         <div class="row">
           <div class="col-md-5 mb-3">
             <label for="Ville">Ville</label>
