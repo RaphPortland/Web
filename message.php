@@ -127,7 +127,7 @@ session_start();
         <p>Un mail de confirmation vous a été envoyé a l'adresse suivante : <?php echo $_SESSION["Email"]; ?> </br>Votre commande sera livrée sous un délai de 6 à 9 jours. Merci pour votre commande ! </p> 
             <b>A bientôt !</b>
         </div>
-        
+    </div>
 
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -137,8 +137,9 @@ session_start();
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-    <p>Ou nous retrouver? Visiter notre<a href="https://getbootstrap.com/"> Facebook</a> ou notre page <a href="/docs/4.3/getting-started/introduction/">Instagram</a>.</p>
+    <p>Ou nous retrouver? Visiter notre<a href="https://www.facebook.com/A-MA-ZONE-2302826419965406/"> Facebook</a> ou notre page <a href="https://www.instagram.com/amazoneece/?hl=fr">Instagram</a>.</p>
 </footer>
-</div>
+</div> 
 </body>
+
 </html>

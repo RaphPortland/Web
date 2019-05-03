@@ -125,21 +125,21 @@ session_start();
         <div class="row">
           <div class="col-md-4 mb-3">
             <label for="Nom">Nom</label>
-            <input type="text" class="form-control border border-dark" name = "Nom" id="Nom" placeholder="" value="" required>
+            <input type="text" class="form-control" name = "Nom" id="Nom" placeholder="Nom" value="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="Prenom">Prénom</label>
-            <input type="text" class="form-control border border-dark" name = "Prenom" id="Prenom" placeholder="" value="" required>
+            <input type="text" class="form-control" name = "Prenom" id="Prenom" placeholder="Prénom" value="" required>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
           </div>
           <div class="col-md-4 mb-3">
               <label for="Tel">Numéro de téléphone</label>
-          <input type="tel" class="form-control border border-dark" name = "Tel" id="Tel" placeholder="" required>
+          <input type="tel" class="form-control" name = "Tel" id="Tel" placeholder="Numéro de téléphone" required>
           <div class="invalid-feedback">
             Please enter your number phone.
           </div>
@@ -148,7 +148,7 @@ session_start();
 
         <div class="mb-3">
           <label for="Adresse1">Adresse 1</label>
-          <input type="text" class="form-control border border-dark" name = "Adresse1" id="Adresse1" placeholder="" required>
+          <input type="text" class="form-control" name = "Adresse1" id="Adresse1" placeholder="Adresse 1" required>
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
@@ -156,27 +156,27 @@ session_start();
 
         <div class="mb-3">
           <label for="Adresse2">Adresse 2 </label>
-          <input type="text" class="form-control border border-dark" name ="Adresse2" id="Adresse2" placeholder="">
+          <input type="text" class="form-control" name ="Adresse2" id="Adresse2" placeholder="Adresse 2">
         </div>
 
         <div class="row">
           <div class="col-md-5 mb-3">
             <label for="Ville">Ville</label>
-            <input type="text" class="form-control border border-dark" name = "Ville" id="Ville" placeholder="" value="" required>
+            <input type="text" class="form-control" name = "Ville" id="Ville" placeholder="Ville" value="" required>
             <div class="invalid-feedback">
               Please select a valid country.
             </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="CodePostal">Code postal</label>
-            <input type="text" class="form-control border border-dark" name = "CodePostal" id="CodePostal" placeholder="" value="" required>
+            <input type="text" class="form-control" name = "CodePostal" id="CodePostal" placeholder="Code postal" value="" required>
             <div class="invalid-feedback">
               Please provide a valid state.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="Pays">Pays</label>
-            <input type="text" class="form-control border border-dark" name = "Pays" id="Pays" placeholder="" required>
+            <input type="text" class="form-control" name = "Pays" id="Pays" placeholder="Pays" required>
             <div class="invalid-feedback">
               Zip code required.
             </div>
@@ -184,7 +184,7 @@ session_start();
         </div>
           
         <hr class="mb-4">
-        <input class="btn btn-light btn-outline-info btn-lg btn-block" type="submit" value="Valider"></input>
+        <input class="btn btn-light btn-outline-info btn-lg btn-block" type="submit" value="Valider">
       </form>
     </div>
   </div>
@@ -197,7 +197,7 @@ session_start();
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-    <p>Ou nous retrouver? Visiter notre<a href="https://getbootstrap.com/"> Facebook</a> ou notre page <a href="/docs/4.3/getting-started/introduction/">Instagram</a>.</p>
+    <p>Ou nous retrouver? Visiter notre<a href="https://www.facebook.com/A-MA-ZONE-2302826419965406/"> Facebook</a> ou notre page <a href="https://www.instagram.com/amazoneece/?hl=fr">Instagram</a>.</p>
     <p class="float-right">
       <a href="#">Haut de page</a>
     </p>
