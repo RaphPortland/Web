@@ -191,14 +191,14 @@ session_start();
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="Identifiant">Identifiant</label>
-            <input type="text" class="form-control border border-dark" id="Identifiant" name = "Id" placeholder="" value="" required>
+            <input type="text" class="form-control" id="Identifiant" name = "Id" placeholder="Identifiant" value="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="Nom">Nom</label>
-            <input type="text" class="form-control border border-dark" id="Nom" name = "Nom"  placeholder="" value="" required>
+            <input type="text" class="form-control" id="Nom" name = "Nom"  placeholder="Nom" value="" required>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -207,7 +207,7 @@ session_start();
               
           <div class="mb-3">
             <label for="Description">Description</label>
-              <TEXTAREA type="text" class="form-control border border-dark" id="Description" name = "Descri" placeholder="" value="" required></TEXTAREA>
+              <TEXTAREA type="text" class="form-control" id="Description" name = "Descri" placeholder="Description" value="" required></TEXTAREA>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -217,7 +217,7 @@ session_start();
           <div class="row">
           <div class="col-md-3 mb-2">
             <label for="Prix">Prix</label>
-            <input type="number" class="form-control border border-dark" id="Prix" placeholder="" name = "Prix"  value="" required>
+            <input type="number" class="form-control" id="Prix" placeholder="Prix" name = "Prix"  value="" required>
             <div class="invalid-feedback">
               Please select a valid country.
             </div>
@@ -225,14 +225,14 @@ session_start();
 
             <div class="col-md-3 mb-2">
               <label for="Quantité">Quantité</label>
-            <input type="number" class="form-control border border-dark" id="Qtt" placeholder="" name = "Qtt"  value="" required>
+            <input type="number" class="form-control" id="Qtt" placeholder="Quantité" name = "Qtt"  value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
               
             <div class="col-md-3 mb-2">
             <label for="Categorie">Catégorie</label>
-            <select type="text" class="form-control border border-dark" id="Categorie" placeholder="" name = "Categorie" value="" required>
+            <select type="text" class="form-control" id="Categorie" placeholder="" name = "Categorie" value="" required>
                 <option value="Livre">Livre</option>
                 <option value="Musique">Musique</option>
                 <option value="Vetement">Vêtement</option>
@@ -242,7 +242,7 @@ session_start();
             
           <div class="col-md-3 mb-2">
             <label for="Vendeur">Vendeur</label>
-            <p class="form-control border border-dark" id="Vendeur" ><?php echo $_SESSION["Email"];  ?></p>
+            <p class="form-control" id="Vendeur" ><?php echo $_SESSION["Email"];  ?></p>
             <div class="invalid-feedback">
             </div>
             </div>
@@ -251,7 +251,7 @@ session_start();
         
         <div class="mb-3">
           <label for="Video">Video</label>
-          <input type="file" class="form-control border border-dark" id="Video" placeholder="">
+          <input type="file" class="form-control" id="Video" placeholder="">
           <div class="invalid-feedback">
           </div>
             </div>
@@ -259,7 +259,7 @@ session_start();
           <div class="row">
           <div class="col-md-6 mb-3">
             <label for="Photos">Photos</label>
-            <input type="hidden" class="form-control border border-dark" id="Photos" placeholder="" value="" ><br/>
+            <input type="hidden" class="form-control" id="Photos" placeholder="" value="" ><br/>
               <input type="file" name="Photo1"/><br/>
               <input type="file" name="Photo2"/><br/>
               <input type="file" name="Photo3"/><br/>
@@ -293,7 +293,7 @@ session_start();
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-    <p>Ou nous retrouver? Visiter notre<a href="https://getbootstrap.com/"> Facebook</a> ou notre page <a href="/docs/4.3/getting-started/introduction/">Instagram</a>.</p>
+    <p>Ou nous retrouver? Visiter notre<a href="https://www.facebook.com/A-MA-ZONE-2302826419965406/"> Facebook</a> ou notre page <a href="https://www.instagram.com/amazoneece/?hl=fr">Instagram</a>.</p>
     <p class="float-right">
       <a href="#">Haut de page</a>
     </p>

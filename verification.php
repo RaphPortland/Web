@@ -120,8 +120,8 @@
             <div class="col-md-3 mb-3">
             </div>
           <div class="col-md-6 mb-3">
-            <label for="pseudo">Mail</label>
-            <input type="text" class="form-control border border-dark" id="mail" name = "mail" placeholder="" value="" required>
+            <label for="mail">E-mail</label>
+            <input type="text" class="form-control" id="mail" name = "mail" placeholder="E-mail" value="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -136,7 +136,7 @@
             </div>
           <div class="col-md-6 mb-3">
             <label for="mp">Mot de passe</label>
-            <input type="password" class="form-control border border-dark" id="mp" name ="password" placeholder="" value="" required>
+            <input type="password" class="form-control" id="mp" name ="password" placeholder="Mot de passe" value="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -164,7 +164,7 @@
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-    <p>Ou nous retrouver? Visiter notre<a href="https://getbootstrap.com/"> Facebook</a> ou notre page <a href="/docs/4.3/getting-started/introduction/">Instagram</a>.</p>
+    <p>Ou nous retrouver? Visiter notre<a href="https://www.facebook.com/A-MA-ZONE-2302826419965406/"> Facebook</a> ou notre page <a href="https://www.instagram.com/amazoneece/?hl=fr">Instagram</a>.</p>
     <p class="float-right">
       <a href="#">Haut de page</a>
     </p>

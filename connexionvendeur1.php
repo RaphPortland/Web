@@ -134,15 +134,8 @@ session_start();
             <div class="col-md-3 mb-3">
             </div>
           <div class="col-md-6 mb-3">
-            <label for="pseudo">Adresse e-mail</label>
-
-
-            <input type="email" id="pseudo" name = "mail" class="form-control" placeholder="Adresse e-mail" required autofocus>
-
-
-
-
-
+            <label for="pseudo">E-mail</label>
+            <input type="email" id="pseudo" name = "mail" class="form-control" placeholder="E-mail" required autofocus>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -156,7 +149,7 @@ session_start();
             <div class="col-md-3 mb-3">
             </div>
           <div class="col-md-6 mb-3">
-            <label for="inputPassword" class="sr-only">Mot de passse</label>
+            <label for="inputPassword">Mot de passse</label>
             <input type="password" name = "password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
             <div class="invalid-feedback">
               Valid first name is required.
@@ -186,6 +179,9 @@ session_start();
           </div>   
           
         </form>
+        </div>
+        </div>
+      </div>
 
           <footer class="my-5 pt-5 text-muted text-center text-small">
               <p class="mb-1">Site AMA'ZONE &copy; ECE AMA'ZONE_2019</p>
@@ -194,7 +190,7 @@ session_start();
                 <li class="list-inline-item"><a href="#">Terms</a></li>
                 <li class="list-inline-item"><a href="#">Support</a></li>
               </ul>
-              <p>Ou nous retrouver? Visiter notre<a href="https://getbootstrap.com/"> Facebook</a> ou notre page <a href="/docs/4.3/getting-started/introduction/">Instagram</a>.</p>
+              <p>Ou nous retrouver? Visiter notre<a href="https://www.facebook.com/A-MA-ZONE-2302826419965406/"> Facebook</a> ou notre page <a href="https://www.instagram.com/amazoneece/?hl=fr">Instagram</a>.</p>
               <p class="float-right">
                 <a href="#">Haut de page</a>
               </p>
