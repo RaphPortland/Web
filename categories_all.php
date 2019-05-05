@@ -205,7 +205,6 @@ $Stock = array();
 $workwith = $_SESSION['newvaleueonthecart'];
 
 
-
     if ($db_found) {
         $sql = "SELECT* FROM Items";
         $result = mysqli_query ($db_handle, $sql);
@@ -213,19 +212,14 @@ $workwith = $_SESSION['newvaleueonthecart'];
 
               $Stock[$data["Id"]]= $data["Stock"];
 
-              if($i<5){
-                if($i%4 == 3){
-                  echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
-                      <h1 class='my-4'> </h1> </div>";
-                }
-              } else {
-                  if($i==6 || $i==9 || $i==12){
-                    echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
-                      <h1 class='my-4'> </h1> </div>";
-                    }
-              }   
 
-            	
+            	if($i%4 == 3){
+
+
+            		echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
+            	        <h1 class='my-4'> </h1> </div>";
+            		//echo "on print : ". $i;
+            	}
               if(isset($workwith[$data["Id"]])){
 
               }
@@ -240,7 +234,6 @@ $workwith = $_SESSION['newvaleueonthecart'];
                 <h5 class='card-title'>
                   <a href='#'>". $data['Nom'] ."</a>
                 </h5>
-                <h1>".$i." </h1>
 
                 <h6>".$data['Prix']."€</h6>
                 <p class='card-text'>".$data['Description']." </p>
