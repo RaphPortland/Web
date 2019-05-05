@@ -1,4 +1,5 @@
 <?php 
+//php pour la deconnexion
 
 //if ($_POST["deco"]){
 session_start();

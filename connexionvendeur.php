@@ -1,5 +1,6 @@
 <?php 
-session_start();
+//php pour la connexion vendeur
+session_start();//session start
 
 define('DB_SERVER', 'localhost');
 define ('DB_USER', 'root');
@@ -17,30 +18,30 @@ $db_found = mysqli_select_db ($db_handle, $database);
 
 // si la BDD existe, faire le traitement
 
-    if ($db_found) {
-        $sql = "SELECT* FROM Vendeur WHERE Email = '". $emailvendeur."' AND Password = '". $passwordvendeur. "'";
-        $result = mysqli_query ($db_handle, $sql);
-        if(mysqli_num_rows ($result)==1){
-            while ($data = mysqli_fetch_assoc($result)){
+if ($db_found) {
+    $sql = "SELECT* FROM Vendeur WHERE Email = '". $emailvendeur."' AND Password = '". $passwordvendeur. "'";
+    $result = mysqli_query ($db_handle, $sql);
+    if(mysqli_num_rows ($result)==1){
+        while ($data = mysqli_fetch_assoc($result)){
                 // On démarre la session AVANT d'écrire du code HTML
-                session_destroy();
-                session_start();
+            session_destroy();
+            session_start();
 
                 // On s'amuse à créer quelques variables de session dans $_SESSION
-                $_SESSION['Email'] = $data['Email'];
-                $_SESSION['Nom'] = $data['Nom'];
-                $_SESSION['Pseudo'] = $data['PseudoVendeur'];
-                $_SESSION['Prenom'] = $data['Prenom'];
-                $_SESSION['Statut'] = "Vendeur";
-                $_SESSION['Photo'] = $data["Photo"];
+            $_SESSION['Email'] = $data['Email'];
+            $_SESSION['Nom'] = $data['Nom'];
+            $_SESSION['Pseudo'] = $data['PseudoVendeur'];
+            $_SESSION['Prenom'] = $data['Prenom'];
+            $_SESSION['Statut'] = "Vendeur";
+            $_SESSION['Photo'] = $data["Photo"];
 
-                    header('Location: profilvendeur.php');
+            header('Location: profilvendeur.php');
 
 
             }// end while
         } else {
 
-                    header('Location: connexionvendeur1.php?action=message');
+            header('Location: connexionvendeur1.php?action=message');
 
         }
 
@@ -53,5 +54,5 @@ $db_found = mysqli_select_db ($db_handle, $database);
     }
 
 // Fermer la connection 
-mysqli_close($db_handle);
-?>
+    mysqli_close($db_handle);
+    ?>
