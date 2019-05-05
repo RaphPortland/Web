@@ -41,6 +41,10 @@ session_start();
                           //header('Location: itemsenvente.php');
 
                       }
+                      $StockVendu = $data["StockVendu"] + $workwith[$data["Id"]];
+                        $sql6 = "UPDATE Items SET StockVendu ='".$StockVendu."' WHERE Id ='".$data["Id"]."'";
+                        $result6 = mysqli_query ($db_handle, $sql6);
+
 
                    
                     }//end while

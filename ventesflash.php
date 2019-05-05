@@ -1,12 +1,18 @@
-<?php
-    session_start();
+<?php 
+
+session_start();
+
 ?>
+
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Categories : tous les articles;</title>
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Ventes Flash</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -15,7 +21,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <style>
+   <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -24,13 +30,12 @@
         -ms-user-select: none;
         user-select: none;
       }
-
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
       }
-
+        
 #menu-deroulant, #menu-deroulant ul {
     padding: 0;
     margin: 0;
@@ -64,19 +69,17 @@
 /* Au survol des li du menu on replace les sous menus */
     left: auto;
 }
-
-
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
   </head>
 
 
-
   <body>
+
     <header>
 
- <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-info">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-info">
   <a href="index.html" class="navbar-brand d-flex align-items-center">
         <img src="img/pierre.png"></a>
   <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
@@ -106,67 +109,19 @@
     </form>
   </div>
 </nav>
-
-   <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       
-
-      <script type="text/javascript">
-        $(document).ready(function(){
-
-          $("#gotopanier").click(function() {
-            document.location.href="panier.php"; 
-
-          });
-        });
-
-      </script>
-
-        <button type="button" class="btn btn-dark btn-lg" id = "gotopanier">Panier</button>
-
-
-        <?php 
-
-       /* if(isset($_SESSION['Email'])){
-            echo "<form method='POST' action='deco.php'>
-           <input type='submit' name='deco' class='btn btn-dark btn-lg' value = 'deco'>
-             </form>";
-        }
-        else {
-
-        }
-
-*/
-        ?>
-      -->
-
-
-
-
-    
-
 </header>
-<br/> <br/><br/>
 
-<!-- 
-  <section class="jumbotron text-center">
+<main role="main">
+<br/> <br/>
+  <section class="jumbotron text-center text-info">
     <div class="container">
-      <div class="text"> <h4> Voici la liste des articles toute categorie confondu : </h4></div>
+      <div class="py-5 text-center text-info"> <h2>Ventes Flash</h2></div>
+
+
+      
     </div>
-  </section>			-->
-
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-3">
-        <h1 class="my-4"> </h1>
-        <div class="list-group">
-       		 <a href="categories_all.php" class="btn btn-dark btn-sm ">Tout</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Vetements</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Musique</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Sport et loisirs</a> 
-			<a href="#" class="btn btn-outline-dark btn-sm ">Livres</a> 
-        </div>
-      </div>
+  </section>
 
 
 
@@ -182,6 +137,7 @@ function onchecklesstocks(stockenquestion, nombredanslepanier){
 
 
 </script>
+<div class="row">
 
 <?php 
     session_start();
@@ -205,27 +161,31 @@ $Stock = array();
 $workwith = $_SESSION['newvaleueonthecart'];
 
 
-
     if ($db_found) {
-        $sql = "SELECT* FROM Items";
+        //$sql = "SELECT* FROM Items";
+        //$sql = "SELECT * FROM Items GROUP BY Categorie HAVING StockVendu IN (SELECT MAX(StockVendu) FROM Items GROUP BY Categorie)";
+        $sql = "SELECT *
+                FROM (
+                      SELECT Categorie, MAX(StockVendu) as MaxStock
+                      FROM Items
+                      GROUP BY Categorie
+                ) r
+                INNER JOIN Items t
+                ON t.Categorie = r.Categorie AND t.StockVendu = r.MaxStock";
+
         $result = mysqli_query ($db_handle, $sql);
             while ($data = mysqli_fetch_assoc($result)){
 
               $Stock[$data["Id"]]= $data["Stock"];
 
-              if($i<5){
-                if($i%4 == 3){
-                  echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
-                      <h1 class='my-4'> </h1> </div>";
-                }
-              } else {
-                  if($i==6 || $i==9 || $i==12){
-                    echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
-                      <h1 class='my-4'> </h1> </div>";
-                    }
-              }   
 
-            	
+              if($i%5 == 4){
+
+
+                echo " </div> <div class='row'> <div class='col-lg-3 col-md-6 mb-3'>
+                      <h1 class='my-4'> </h1> </div>";
+                //echo "on print : ". $i;
+              }
               if(isset($workwith[$data["Id"]])){
 
               }
@@ -233,14 +193,13 @@ $workwith = $_SESSION['newvaleueonthecart'];
                 $workwith[$data["Id"]] = 0;
               }
               $stockvirtu = $data['Stock']-$workwith[$data["Id"]];
-            	echo " <div class='col-lg-3 col-md-6 mb-3'>
-            	        <h1 class='my-4'> </h1>
+              echo " <div class='col-lg-3 col-md-6 mb-3'>
+                      <h1 class='my-4'> </h1>
               <a href='article.php?param=".$data["Id"]."'><img class='card-img-top' src='".$data["Photo"]."' alt=''></a>
               <div class='card-body'>
                 <h5 class='card-title'>
                   <a href='#'>". $data['Nom'] ."</a>
                 </h5>
-                <h1>".$i." </h1>
 
                 <h6>".$data['Prix']."€</h6>
                 <p class='card-text'>".$data['Description']." </p>
@@ -256,7 +215,7 @@ $workwith = $_SESSION['newvaleueonthecart'];
               </div>
             </div>";
 
-            	$i = $i +1;
+              $i = $i +1;
 
             }// end while
     }//end if
@@ -269,9 +228,11 @@ $workwith = $_SESSION['newvaleueonthecart'];
 // Fermer la connection 
 mysqli_close($db_handle);
 ?>
-		
+
+  
 </div>
-</div>
+
+</main>
 
 <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">Site AMA'ZONE &copy; ECE AMA'ZONE_2019</p>
@@ -281,16 +242,12 @@ mysqli_close($db_handle);
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
     <p>Ou nous retrouver? Visiter notre<a href="https://www.facebook.com/A-MA-ZONE-2302826419965406/"> Facebook</a> ou notre page <a href="https://www.instagram.com/amazoneece/?hl=fr">Instagram</a>.</p>
-     <p class="float-right">
+    <p class="float-right">
       <a href="#">Haut de page</a>
     </p>
 </footer>
 
-
-<h1> coucou  <?php echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
-  ?>
-
-  </h1>
-
 </body>
 
+
+</html>
