@@ -45,19 +45,19 @@ if($_GET["action"]=="supp"){
 			}
 
 			
-				            }//end while
-				    }//end if
+		}//end while
+	}//end if
 
 				// si la BDD n'existe pas 
-				    else {
-				    	echo 'Database not found';
-				    }
+	else {
+		echo 'Database not found';
+	}
 
 				// Fermer la connection 
 				    mysqli_close($db_handle);
 
 
-				} else {
+} else {
 
 
 					if($_GET["Stock"]-$_GET["Panier"] <=0){

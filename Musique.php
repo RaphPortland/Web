@@ -207,7 +207,7 @@
 
 
       if ($db_found) {
-        $sql = "SELECT* FROM Items";
+        $sql = "SELECT* FROM Items WHERE Categorie = 'Musique'";
         $result = mysqli_query ($db_handle, $sql);
         while ($data = mysqli_fetch_assoc($result)){
 
@@ -286,6 +286,7 @@
     <a href="#">Haut de page</a> <!--lien qui remonte en haut de la page -->
   </p>
 </footer>
+
 
 
 </body>

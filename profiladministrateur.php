@@ -135,12 +135,15 @@ if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
     <div class="container">
       <!-- Affichage du profil administrateur -->
       <div class="row"> 
-        <div class="col-md-2">
+        <div class="col-md-6">
           <h4>Votre profil</h4>
-          <p><img src="img/raph.jpg"></p><br/><br/> 
+          <!--<p><img src="img/bose.png"></p><br/><br/>  -->    <p><img src=<?php echo $_SESSION['Photo']; ?>></p><br/><br/> 
+
+
+
         </div>
-        <div class="col-md-4">
-          <p><br/><br/>Nom: <?php echo $_SESSION['Nom']; ?> <br/>Prénom: <?php echo $_SESSION['Prenom']; ?> <br/> Pseudo: <?php echo $_SESSION['Pseudo']; ?><br/>E-mail: <?php echo $_SESSION['Email']; ?> </p><!-- affichage des informations personnelles de l'administrateur -->
+        <div class="col-md-">
+          <p><br/><br/>Nom: <?php echo $_SESSION['Nom']; ?> <br/>Prénom: <?php echo $_SESSION['Prenom']; ?> <br/> Pseudo: <?php echo $_SESSION['Pseudo']; ?><br/>E-mail: <?php echo $_SESSION['Email']; ?> </p> <!-- affichage des informations personnelles du vendeur -->
         </div>
       </div>
 
@@ -154,7 +157,7 @@ if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
         </div>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <a href="gerervendeurs.html"><img src="img/administrateur.jpg" alt="responsive" class="img-thumbnail"></a> 
+            <a href="gerervendeurs.php"><img src="img/administrateur.jpg" alt="responsive" class="img-thumbnail"></a> 
             <div class="card-body">
               <p class="card-text"> Gérer les vendeurs </p><!-- boutons pour gerer les vendeur -->
               <div class="d-flex justify-content-between align-items-center">

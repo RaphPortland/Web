@@ -34,6 +34,7 @@ if ($db_found) {
             $_SESSION['Prenom'] = $data['Prenom'];
             $_SESSION['Statut'] = "Vendeur";
             $_SESSION['Photo'] = $data["Photo"];
+            $_SESSION['Admin'] = $data["Admin"];
 
             header('Location: profilvendeur.php');
 

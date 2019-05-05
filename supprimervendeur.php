@@ -1,4 +1,9 @@
-<!doctype html>
+<?php 
+session_start();
+
+
+?>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -126,13 +131,68 @@
 
 
       
-      <div class="row">
+<div class="row">
 
-        
 
-        <p>On affiche TOUS les vendeurs et on peut LES SUPPRIMER </p>              
 
-      </div>
+        <?php
+//php pour les items en ventes  
+
+session_start();//session ouverte
+
+//connexion au serveur
+define('DB_SERVER', 'localhost');
+define ('DB_USER', 'root');
+define ('DB_PASS', 'root');
+
+// identifier le nom de la base de données 
+$database = "Projetweb";
+//connecter l'utilsateur dans la BDD
+$db_handle = mysqli_connect (DB_SERVER, DB_USER, DB_PASS);
+$db_found = mysqli_select_db ($db_handle, $database);
+
+// si la BDD existe, faire le traitement
+$i = 0;
+
+if ($db_found) {
+  $sql = "SELECT * FROM Vendeur";
+  $result = mysqli_query ($db_handle, $sql);
+
+  while ($data = mysqli_fetch_assoc($result)){
+
+
+
+  echo "       <div class='row'> 
+        <div class='col-md-6'>
+          <h4>Info vendeur :</h4>
+              <p><img src='".$data['Photo']."'' ></p><br/><br/> 
+
+
+
+        </div>
+        <div class='col-md-6'>
+          <p><br/><br/>Nom:   ".$data['Nom']." <br/>Prénom: ".$data['Prenom']."<br/> Pseudo:  echo ".$data['Pseudo']."<br/>E-mail: ".$data['Email']." </p> <br/> 
+          <form method= 'POST' action = 'supp.php?Email=". $data["Email"]."'> 
+          <input type= 'submit' class='btn btn-dark btn-sm' value='Supprimer vendeur' name = 'suppvendeur' ></input> </br>
+          </form>
+        </div>
+      </div>";
+
+  $i = $i +1;
+
+            }//end while
+    }//end if
+
+// si la BDD n'existe pas 
+    else {
+      echo 'Database not found';
+    }
+
+// Fermer la connection 
+    mysqli_close($db_handle);
+
+    ?>
+  </div>
 
 
 

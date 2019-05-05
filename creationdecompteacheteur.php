@@ -14,6 +14,8 @@ $pseudo = $_POST["Pseudo"];
 $email = $_POST["Email"];
 $password = $_POST["mdp"];
 
+$adresse = 
+$Paiement= $_POST["num_carte"];
 // identifier le nom de la base de données 
 $database = "Projetweb";
 //connecter l'utilsateur dans la BDD
@@ -23,7 +25,7 @@ $db_found = mysqli_select_db ($db_handle, $database);
 // si la BDD existe, faire le traitement
 
 if ($db_found) {
-    $sql = "INSERT INTO `Acheteur` (`Pseudo`, `Email`, `Password`, `Nom`, `Prenom`) VALUES ('". $pseudo. "', '" .$email. "','".$password."', '" .$nom. "','".$prenom."')";
+    $sql = "INSERT INTO `Acheteur` (`PseudoAcheteur`, `Email`, `Password`, `Nom`, `Prenom`, `Adresse`, `Paiement`) VALUES ('". $pseudo. "', '" .$email. "','".$password."', '" .$nom. "','".$prenom."', '', '" .$Paiement. "')";
 
 
     session_destroy();

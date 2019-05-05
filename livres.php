@@ -207,7 +207,7 @@
 
 
       if ($db_found) {
-        $sql = "SELECT* FROM Items";
+        $sql = "SELECT* FROM Items WHERE Categorie = 'Livres'";
         $result = mysqli_query ($db_handle, $sql);
         while ($data = mysqli_fetch_assoc($result)){
 
@@ -287,6 +287,11 @@
   </p>
 </footer>
 
+
+<h1> coucou  <?php echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+?>
+
+</h1>
 
 </body>
 

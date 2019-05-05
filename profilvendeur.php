@@ -8,6 +8,13 @@ if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
 
 }
 
+if ($_SESSION['Admin'] == "Oui"){
+    header('Location: profiladministrateur.php');
+
+}
+
+
+
 
 ?>
 <html lang="en">
@@ -137,12 +144,12 @@ if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
       <div class="row"> 
         <div class="col-md-8">
           <h4>Votre profil</h4>
-          <p><img src="img/bose.png"></p><br/><br/>      <!-- <p><img src=<?php //echo $_SESSION['Photo']; ?>></p><br/><br/> -->
+          <!--<p><img src="img/bose.png"></p><br/><br/>  -->    <p><img src=<?php echo $_SESSION['Photo']; ?>></p><br/><br/> 
 
 
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-">
           <p><br/><br/>Nom: <?php echo $_SESSION['Nom']; ?> <br/>Prénom: <?php echo $_SESSION['Prenom']; ?> <br/> Pseudo: <?php echo $_SESSION['Pseudo']; ?><br/>E-mail: <?php echo $_SESSION['Email']; ?> </p> <!-- affichage des informations personnelles du vendeur -->
         </div>
       </div>

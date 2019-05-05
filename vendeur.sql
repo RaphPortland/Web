@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 05, 2019 at 04:55 AM
+-- Generation Time: May 05, 2019 at 06:37 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -36,7 +36,7 @@ CREATE TABLE `Vendeur` (
 --
 
 INSERT INTO `Vendeur` (`Admin`, `Email`, `PseudoVendeur`, `Password`, `Nom`, `Prenom`, `Photo`, `Fondecran`) VALUES
-('Oui', 'levanah.masbernat@edu.ece.fr', 'Lele', 'coucou', 'Masbernat', 'Lévanah', 'img/vendeur3.png', 'img/fondecran3.jpg'),
+('Non', 'levanah.masbernat@edu.ece.fr', 'Lele', 'coucou', 'Masbernat', 'Lévanah', 'img/vendeur3.png', 'img/fondecran3.jpg'),
 ('Non', 'louis.baret@edu.ece.fr', 'loulou', 'coucou', 'Baret', 'Louis', 'img/vendeur4.jpg', 'img/fondecran4.jpg'),
 ('Oui', 'raphael.partouche@edu.ece.fr', 'Raphou', 'coucou', 'Partouche', 'Raphael', 'img/vendeur2.jpg', 'img/fondecran2.jpg'),
 ('Oui', 'salome.masbernat@edu.ece.fr', 'Salom', 'coucou', 'Masbernat', 'Salomé', 'img/vendeur1.jpg', 'img/fondecran1.jpg'),

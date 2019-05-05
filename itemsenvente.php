@@ -1,4 +1,15 @@
-<!doctype html>
+<?php 
+session_start();
+
+
+if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
+  header('Location: connexionvendeur1.php');
+
+}
+
+
+?>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -147,7 +158,9 @@ $i = 0;
 if ($db_found) {
   $sql = "SELECT * FROM Items WHERE Vendeur ='".$_SESSION["Email"]."'";
   $result = mysqli_query ($db_handle, $sql);
+
   while ($data = mysqli_fetch_assoc($result)){
+
 
    if($i%5 == 4){
      ?>

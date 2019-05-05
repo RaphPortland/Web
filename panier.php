@@ -260,8 +260,6 @@ $_SESSION["tarif"]=0;
 </body>
 
 
-<h1>coucou  <?php echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
-?></h1>
 
 
 

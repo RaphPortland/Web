@@ -22,6 +22,7 @@ if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
     	$Categorie = $_POST["Categorie"];
     	$note = 4;
     	$email = $_SESSION['Email'];
+        $Photo = "img/BOSE.png";
 
 
     	echo "Id :". $Id;
@@ -40,7 +41,8 @@ if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
 
             // si la BDD existe, faire le traitement
     	if ($db_found) {
-    		$sql = "INSERT INTO Items (`Id`, `Nom`, `Description`, `Prix`, `Categorie`, `Note`, `Stock`, `Vendeur`) VALUES ('".$Id."', '".$Nom."','".$Descri."', '".$Prix."','".$Categorie."', '".$note."','".$Qtt."' ,'".$email."')";
+    		
+            $sql = "INSERT INTO `Items` (`Id`, `Nom`, `Description`, `Photo`, `Video`, `Prix`, `Categorie`, `Taille`, `Couleur`, `Note`, `Stock`, `StockVendu`, `Vendeur`) VALUES ('".$Id."', '".$Nom."','".$Descri."','".$Photo."', 'Pas de Video', '".$Prix."','".$Categorie."',' ',' ', '".$note."','".$Qtt."' ,' ','".$email."')";
 
 
     		$result = mysqli_query($db_handle, $sql);

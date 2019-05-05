@@ -1,11 +1,13 @@
 <?php 
 //php pour creer un compte vendeur
 //connexion au serveur
+
+session_start();
 define('DB_SERVER', 'localhost');
 define ('DB_USER', 'root');
 define ('DB_PASS', 'root');
 
-$nom = $_POST["Nom"];
+$nom = $_POST["Nom"]; 
 $prenom = $_POST["prenom"];
 
 $pseudo = $_POST["Pseudo"];
@@ -22,21 +24,20 @@ $db_found = mysqli_select_db ($db_handle, $database);
 // si la BDD existe, faire le traitement
 
 if ($db_found) {
-    $sql = "INSERT INTO `Vendeur` (`Pseudo`, `Email`, `Password`, `Nom`, `Prenom`) VALUES ('". $pseudo. "', '" .$email. "','".$mdp."', '" .$nom. "','".$prenom."')";
+    $sql = "INSERT INTO `Vendeur` (`Admin`, `Email`, `PseudoVendeur`, `Password`, `Nom`, `Prenom`, `Photo`, `Fondecran`) VALUES ('Non','" .$email. "','". $pseudo. "','".$mdp."', '" .$nom. "','".$prenom."', 'photodeprofil.jpg', 'photodeprofil.jpg')";
 
-
-    session_destroy();
-    session_start();
+   # session_destroy();
+    #session_start();
                 // On s'amuse à créer quelques variables de session dans $_SESSION
-    $_SESSION['Email'] = $email;
-    $_SESSION['Nom'] = $nom;
-    $_SESSION['Pseudo'] = $pseudo;
-    $_SESSION['Prenom'] = $prenom;
-    $_SESSION['Statut'] = "Vendeur";
+    #$_SESSION['Email'] = $email;
+    #$_SESSION['Nom'] = $nom;
+    #$_SESSION['Pseudo'] = $pseudo;
+    #$_SESSION['Prenom'] = $prenom;
+    #$_SESSION['Statut'] = "Vendeur";
 
 
     $result = mysqli_query($db_handle, $sql);
-    header('Location: profilvendeur.php');
+    header('Location: connexionvendeur1.php');
     }//end if
 
 // si la BDD n'existe pas 

@@ -1,4 +1,9 @@
-<!doctype html>
+<?php 
+
+session_start();
+
+?>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -166,12 +171,12 @@
 
         <div class="mb-3"> <!--Ajouter un mdp et obligation de rentrer une valeur-->
           <label for="motdepasse">Mot de passe du vendeur<span class="text-muted"></span></label>
-          <input type="text" class="form-control" id="motdepasse" name = "mdp" placeholder="Mot de passe du vendeur">
+          <input type="password" class="form-control" id="motdepasse" name = "mdp" placeholder="Mot de passe du vendeur">
         </div>
 
         <div class="mb-3"> <!--Ajouter un mdpt et obligation de rentrer une valeur-->
           <label for="confirmation">Confirmation du mot de passe du vendeur <span class="text-muted"></span></label>
-          <input type="text" class="form-control" id="confirmation" placeholder="Confirmation du mot de pass du vendeur">
+          <input type="password" class="form-control" id="confirmation" placeholder="Confirmation du mot de pass du vendeur">
         </div>
 
         <hr class="mb-4">
