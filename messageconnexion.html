@@ -5,6 +5,7 @@
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
+/*Style de la page qui affiche un message lorsque l'utilisateur est connecté*/
 
 button {
   background-color: #1799B5;
@@ -20,6 +21,7 @@ button:hover {
   opacity: 0.8;
 }
 
+/*gestion de la fenetre d'affichage*/
 .modal {
   display: none;
   position: fixed;
@@ -35,6 +37,7 @@ button:hover {
   color: #1799B5;
 }
 
+/*gestion du contenu de la fenetre d'affichage*/
 .modal-content {
   background-color: #fefefe;
   margin: 10% auto 15% auto; 
@@ -75,7 +78,7 @@ button:hover {
 </div>
 
 <script>
-//Fenetre
+//Fenetre d'affichage 
 var modal = document.getElementById('id01');
 
 // Si l'utilisateur clique en dehors de la fenetre elle se ferme
