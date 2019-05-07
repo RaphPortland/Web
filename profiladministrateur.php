@@ -203,8 +203,29 @@ if($_SESSION['Email'] == NULL || $_SESSION['Email'] == ""){
           </div>
         </div>
 
+        <div class="row">
 
-      </div>
+            <div class="col-5">  </div>
+            <div class="col-2">
+
+              <button type="button" class="btn btn-light btn-outline-info btn-lg btn-block" id = "Stats"> Stats </button>
+
+
+            </div>
+            <div class="col-5"></div>
+        </div>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $("#Stats").click(function() {
+        document.location.href="stats.php"; 
+
+      });
+    });
+
+  </script>
 
 
 

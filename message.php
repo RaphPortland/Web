@@ -1,3 +1,52 @@
+<?php
+
+session_start();
+include("PHPMailer/class.phpmailer.php");
+include("PHPMailer/class.smtp.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
+
+$mail = new PHPMailer();
+$mail->IsSMTP();
+$mail->Host = 'smtp.gmail.com';  
+$mail->Port = 587;             
+//authentification facultative
+$mail->SMTPAuth   = true;
+$mail->Username   = "amazoneece@gmail.com";
+$mail->Password   = "coucoucoucou";
+
+$mail->From       = "amazoneece@gmail.com";
+$mail->FromName   = "Ama'zone"; // nom qui sera affiché
+$mail->Subject    = "Achat Ama'zone"; // sujet
+#$mail->AltBody    = "<h1> messagehtml </h1>"; //Body au format texte
+
+$mail->WordWrap   = 50; // nombre de caractere pour le retour a la ligne automatique
+#$mail->MsgHTML("<h1> messagehtml </h1>");
+$mail->msgHTML(file_get_contents('mail.html'));
+
+//$mail->AddAttachment("./examples/images/phpmailer.gif");             // piéce jointe si besoin
+$mail->AddAddress($_SESSION["Email"]);
+$mail->IsHTML(true); // envoyer au format html, passer a false si en mode texte
+ 
+if(!$mail->Send()) {
+
+  #echo "<h1> header <br>header <br>header <br>header <br>header <br> </h1";
+  #echo "Erreur: " . $mail->ErrorInfo;
+} else {
+
+  #echo "<h1> header <br>header <br>header <br>header <br>header <br> </h1";
+  #echo "Le message à bien été envoyén";
+}
+
+?>
+
+
+
 <?php 
 //php qui affiche le message apres le paiement
 

@@ -164,11 +164,14 @@
 // si la BDD existe, faire le traitement
 
             $i = 0;
-            $i = 0;
             $Stock = array();
+            $newclick =0;
             $workwith = $_SESSION['newvaleueonthecart'];
 
             if ($db_found) {
+
+
+
               $sql    = "SELECT* FROM Items WHERE Id ='" . $param . "'";
               $result = mysqli_query($db_handle, $sql);
               while ($data = mysqli_fetch_assoc($result)) {
@@ -194,6 +197,12 @@
                </div>";
 
                $i = $i + 1;
+
+
+               $newclick=0;
+               $newclick = $data["Click"] +1;
+           $sql23 = "UPDATE Items SET Click ='".$newclick."' WHERE Id ='".$data["Id"] ."'";
+            $result23 = mysqli_query ($db_handle, $sql23);
 
         // echo 'ID : '.$data['Id'].'<br>';
         //echo 'Nom : '.$data['Nom'].'<br>';
