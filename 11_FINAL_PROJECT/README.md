@@ -1,6 +1,6 @@
 # Web-project (php, MySQL, hmtl, bootstrap)
 
-English description :
+### English description :
 
 We want to create an e-commerce website for the ECE community (ECE Amazon). The site allows
 the user to buy products from the website, seller to sell items on the website. In this site, we can find the following menus:
@@ -34,7 +34,7 @@ purchase and sale, the complexity of which is hidden from the e-commerce user.
 
 
 
-French desciption : 
+### French desciption : 
 
 On souhaite créer un site web e-commerce pour la communauté ECE (ECE Amazon). Le site permet
 à l’utilisateur d’acheter un produit dans le site, aux individus de vendre ses items dans le site ou pour
