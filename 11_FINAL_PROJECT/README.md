@@ -23,7 +23,8 @@ catégorie.
   * Panier : 
   C’est un menu lié avec l’acheteur courant et les items qu’il a choisi d’acheter
   * Admin : 
-  C’est lié avec le compte du gestionnaire de l’ECE Amazon
+  C’est lié avec le compte du gestionnaire de l’ECE Amazon.
+  
 L’objectif de ce site sera donc de réaliser une plate-forme en ligne permettant le vente e-commerce,
 qu’on peut trouver dans la vraie vie. Cet exercice permettra aux étudiants de se familiariser avec le
 commerce électronique, qu'ils pourront utiliser à l'avenir pour vendre leurs produits ou leurs services.
