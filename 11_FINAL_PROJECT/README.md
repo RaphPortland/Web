@@ -1,7 +1,42 @@
-# Web
+# Web-project (php, MySQL, hmtl, bootstrap)
+
+English description :
+
+We want to create an e-commerce website for the ECE community (ECE Amazon). The site allows
+the user to buy products from the website, seller to sell items on the website. In this site, we can find the following menus:
+Categories, Flash Sales, Sell, Your Account, Cart and Admin. Here is a desciption of each menu :
+  * Categories:
+  These are the categories of items for sale. Obviously, we can not mix
+categories. We display all items to sell by category. A book, for example, is in the category where all others
+books are displayed. There are four categories in the e-commerce site of the ECE Paris: (i) Books, (ii)
+Music, (iii) Clothing, and (iv) Sports 
+  * Flash sales:
+  This is the display of all "bestsellers" (ie the best selling items of the
+week) of the Amazon ECE. We will find four lines of "best-seller", one for each
+category.
+  * To sell :
+  This is the linked menu with a seller who would like to sell his items to Amazon ECE.
+  * Your account :
+  This is the menu linked with the buyer of the Amazon ECE.
+  * Cart :
+  It is a linked menu with the current buyer and the items he has chosen to purchase
+  * Admin:
+  It is linked with the manager account of the Amazon ECE.
+  
+The goal of this site will be to create an online platform for e-commerce sales,
+that can be found in real life. This exercise will allow students to become familiar with the
+e-commerce, which they can use in the future to sell their products or services.
+As part of this project, students will develop a front-end platform to
+sell items from the administrator and vendors, as well as customer purchases. They
+will also develop the back-end platform that will enable transparent transactions
+purchase and sale, the complexity of which is hidden from the e-commerce user.
 
 
-On souhaite créer un site web e-commerce de la communauté ECE (ECE Amazon). Le site permette
+
+
+French desciption : 
+
+On souhaite créer un site web e-commerce pour la communauté ECE (ECE Amazon). Le site permet
 à l’utilisateur d’acheter un produit dans le site, aux individus de vendre ses items dans le site ou pour
 le gérant d’administrer le site de commerce. Dans ce site, on peut trouver les menus suivants :
 Catégories, Ventes flash, Vendre, Votre compte, Panier et Admin. Les descriptions de ces menus
